@@ -3,6 +3,7 @@ body {
   margin: 10px;
   display: flex;
   justify-content: center;
+  background-color: rgb(158, 218, 236);
 }
 
 .container {
@@ -14,36 +15,104 @@ body {
 
 input {
   margin-bottom: 10px;
-  width: 500px;
+  width: 350px;
   padding: 10px;
+  box-sizing: border-box;
 }
 
 button {
   padding: 10px;
   margin-bottom: 10px;
   font-size: 0.9rem;
+  border: 1px solid #ff4d4f;
+  border-radius: 4px;
+  color: white;
+  background-color: #ff4d4f;
+  transition: background 0.2s;
+}
+button:hover {
+  background-color: #31e61a;
 }
 
 h2 {
   margin: 25px 0 10px 0;
 }
 
+/* Align todo content and delete button side by side and same height */
+.todo-row {
+  display: flex;
+  align-items: stretch; /* Make children the same height */
+  margin-bottom: 10px;
+  width: 350px; /* Reduced width for a smaller todo box */
+  box-sizing: border-box;
+}
+
 .todo {
-  position: relative;
-  margin: 10px 0 20px 0;
-  padding: 10px;
-  border: 1px solid;
-  width: 500px;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  margin: 0;
+  padding: 0 7px;
+  border-radius: 4px;
+  background-color: white;
+  min-height: 44px;
+  height: 44px; /* Force same height as .delete */
+  box-sizing: border-box;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.todo span,
+.todo .edit {
+  margin-left: 10px;
+}
+
+.edit {
+  background-color: #ffc107;
+  color: #222;
+  border: none;
+  border-radius: 4px;
+  padding: 0.3em 0.8em;
+  cursor: pointer;
+  font-size: 0.95em;
+  margin-left: 10px;
+  transition: background 0.2s;
+  align-self: center; /* Align edit button with text */
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+.edit:hover {
+  background-color: #ff9800;
 }
 
 .delete {
-  padding-left: 10px;
+  align-self: stretch;
+  margin-left: 0;
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0 20px;
   cursor: pointer;
+  font-size: 0.95em;
+  transition: background 0.2s;
+  min-width: 80px;
+  height: 44px; /* Force same height as .todo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  touch-action: manipulation;
+}
+
+.delete:hover {
+  background-color: #31e61a;
 }
 
 span {
-  position: absolute;
-  right: 10px;
+  position: static;
+  right: auto;
 }
 
 .complete {
@@ -52,4 +121,15 @@ span {
 
 .incomplete {
   background-color: rgb(255, 255, 0, 0.3);
+}
+
+@media (max-width: 500px) {
+  .todo-row {
+    width: 98vw;
+    max-width: 98vw;
+  }
+  input {
+    width: 90vw;
+    min-width: 0;
+  }
 }
