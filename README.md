@@ -1,6 +1,4 @@
-## 10.04.25 Live Coding 
 
-## To Do App - Starter Repo
 # The-TO-DOs-App
 A simple React To-Do app with add, edit, and delete features. All tasks are saved in your browser and the app is fully responsive. Built with React hooks and l
 This is a simple and modern To-Do application built with **React** using the `useReducer` hook for state management. The app allows users to add, edit, and delete to-dos, and all tasks are persisted in the browser's localStorage so they remain after a page refresh.
@@ -39,7 +37,7 @@ This is a simple and modern To-Do application built with **React** using the `us
    ```
 
 4. **Open your browser:**  
-   Visit [http://localhost:3000](http://localhost:3000) (or the port shown in your terminal).
+   Visit [http://localhost:...](http://localhost:3000) (or the port shown in your terminal).
 
 
 ## License
